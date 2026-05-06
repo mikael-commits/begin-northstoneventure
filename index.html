@@ -120,12 +120,18 @@
     @keyframes up { to { opacity: 1; transform: translateY(0); } }
 
     /* ══ HEADER ══ */
-    .site-header { padding: 14px 0 0; text-align: center; }
+    .site-header {
+      padding: 32px 0 28px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .site-header img {
-      height: 165px; width: auto; display: inline-block;
+      height: auto;
+      width: 340px;
+      display: block;
       mix-blend-mode: lighten;
-      transform: scale(1.4);
-      transform-origin: center top;
     }
 
     /* ══ STICKY ANCHOR NAV ══ */
@@ -618,13 +624,13 @@
     /* ══ MOBILE ══ */
     @media (max-width: 640px) {
       .page { padding: 0 18px 60px; }
-      .site-header { padding: 10px 0 0; }
+      .site-header { padding: 24px 0 20px; }
       .site-header img {
-        height: 165px; width: auto;
+        width: 72vw;
+        max-width: 320px;
+        height: auto;
         display: block; margin: 0 auto;
         mix-blend-mode: lighten;
-        transform: scale(1.4);
-        transform-origin: center top;
       }
       .anchor-nav { gap: 12px; padding: 8px 14px; margin-top: 8px; }
       .anchor-link { font-size: 12px; letter-spacing: 0.14em; }
@@ -657,7 +663,7 @@
     <img
       src="northstone-logo.png"
       alt="Northstone Ventures"
-      width="252" height="165"
+      width="340" height="148"
       fetchpriority="high"
       loading="eager"
     />
