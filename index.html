@@ -460,10 +460,105 @@
       letter-spacing: -0.02em;
     }
     .form-headline .accent { color: var(--gold); font-weight: 600; }
+    .form-urgency {
+      font-family: var(--ff-body); font-size: 12px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--gold-line);
+      max-width: 580px; margin-left: auto; margin-right: auto;
+    }
     .form-subline {
-      font-family: var(--ff-body); font-size: 20px; font-weight: 400;
+      font-family: var(--ff-body); font-size: 22px; font-weight: 400;
       color: var(--white); line-height: 1.5;
-      max-width: 580px; margin: 18px auto 0;
+      max-width: 620px; margin: 18px auto 0;
+    }
+    .form-deliverables {
+      list-style: none; padding: 0; margin: 24px auto 0;
+      max-width: 620px; text-align: left;
+    }
+    .form-deliverables li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-family: var(--ff-body); font-size: 22px; font-weight: 400;
+      color: var(--white); line-height: 1.5;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .form-deliverables li:last-child { border-bottom: none; }
+    .form-check {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(46,204,135,0.15);
+      color: #2ecc87;
+      font-size: 16px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 3px;
+    }
+    .form-deliverable-note {
+      color: var(--gold); font-weight: 500;
+    }
+    .form-qualifier {
+      font-family: var(--ff-body); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-top: 16px; opacity: 0.85;
+    }
+
+    /* ══ CALENDLY REVEAL ══ */
+    #calendly-container { animation: fadeUp 0.5s ease forwards; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .calendly-reveal-header {
+      text-align: center; margin-bottom: 0;
+      padding: 28px 24px;
+      background: linear-gradient(180deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.02) 100%);
+      border: 1px solid var(--gold-line);
+      border-radius: 8px 8px 0 0;
+    }
+    .calendly-reveal-icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(46,204,135,0.15);
+      border: 2px solid rgba(46,204,135,0.4);
+      color: #2ecc87; font-size: 22px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .calendly-reveal-title {
+      font-family: var(--ff-head); font-size: 32px; font-weight: 500;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .calendly-reveal-sub {
+      font-family: var(--ff-body); font-size: 17px; font-weight: 400;
+      color: var(--white); line-height: 1.55;
+      max-width: 520px; margin: 0 auto;
+    }
+    .calendly-inline-widget {
+      border: 1px solid var(--gold-line);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      overflow: hidden;
+    }
+    /* Mobile Calendly sizing */
+    @media (max-width: 640px) {
+      .calendly-reveal-header {
+        padding: 22px 16px;
+      }
+      .calendly-reveal-icon {
+        width: 44px; height: 44px; font-size: 18px;
+        margin-bottom: 12px;
+      }
+      .calendly-reveal-title {
+        font-size: 24px; line-height: 1.2; margin-bottom: 8px;
+      }
+      .calendly-reveal-sub {
+        font-size: 15px; line-height: 1.5;
+      }
+      .calendly-inline-widget {
+        height: 620px !important;
+        min-width: 0 !important;
+      }
     }
 
     /* Form card — corners outside overflow:hidden */
@@ -521,21 +616,19 @@
     @media (max-width: 640px) {
       .page { padding: 0 18px 60px; }
       .site-header { padding: 20px 0 0; }
-      .site-header img { height: 84px; }
-      .anchor-nav {
-        gap: 12px; padding: 12px 14px;
-        margin-top: 14px;
+      .site-header img {
+        height: 110px; width: auto;
+        display: block; margin: 0 auto;
       }
+      .anchor-nav { gap: 12px; padding: 12px 14px; margin-top: 14px; }
       .anchor-link { font-size: 12px; letter-spacing: 0.14em; }
-      .hero {
-        padding-top: 18px; padding-bottom: 12px;
-        margin-left: 0; margin-right: 0;
-      }
-      .headline { font-size: 30px; line-height: 1.18; }
+      .hero { padding-top: 18px; padding-bottom: 12px; margin-left: 0; margin-right: 0; }
+      .headline { font-size: 40px; line-height: 1.12; }
+      .headline .line2 { font-size: 24px; letter-spacing: -0.01em; }
       .divider { margin: 20px auto; }
       .section-title { font-size: 30px; }
       .section-sub { font-size: 18px; }
-      .form-headline { font-size: 42px; line-height: 1.12; }
+      .form-headline { font-size: 38px; line-height: 1.1; }
       .cs-body { padding: 20px 16px; }
       .cs-list li { font-size: 15px; }
       .cs-col-headline { font-size: 15px; }
@@ -713,14 +806,20 @@
   ═══════════════════════════════════════ -->
   <section class="reveal r4" id="apply">
     <div class="form-header">
+      <p class="form-urgency">We onboard a maximum of 5 new firms per quarter to maintain delivery quality.</p>
       <h2 class="form-headline">
-        Start Your Assessment.<br/><span class="accent">Book Your Strategy Call.</span>
+        See If You Qualify for a<br/><span class="accent">Free Strategy Call.</span>
       </h2>
-      <p class="form-subline">Answer a few questions so we can identify where AI can improve collections, lead follow-up, intake, and growth — at no cost.</p>
+      <p class="form-subline">If you qualify, you'll unlock a free 60-minute strategy call with our team — and receive the following:</p>
+      <ul class="form-deliverables">
+        <li><span class="form-check">✓</span>A no-pitch promise — if it's not a fit, we'll tell you in the first 5 minutes</li>
+        <li><span class="form-check">✓</span>Exclusive report on the top 5 risks &amp; opportunities when automating</li>
+        <li><span class="form-check">✓</span>A custom revenue leak diagnostic for your firm <span class="form-deliverable-note">(worth $500)</span></li>
+      </ul>
     </div>
 
-    <!-- Tally form -->
-    <div class="form-outer">
+    <!-- Tally form — hidden after submission -->
+    <div class="form-outer" id="tally-container">
       <span class="c tl"></span><span class="c tr"></span>
       <span class="c bl"></span><span class="c br"></span>
       <div class="form-wrap">
@@ -736,6 +835,20 @@
           title="Northstone Ventures Qualification Form"
         ></iframe>
       </div>
+    </div>
+
+    <!-- Calendly embed — hidden until Tally submission -->
+    <div id="calendly-container" style="display:none;">
+      <div class="calendly-reveal-header">
+        <div class="calendly-reveal-icon" aria-hidden="true">✓</div>
+        <h3 class="calendly-reveal-title">You're Qualified — Book Your Strategy Call</h3>
+        <p class="calendly-reveal-sub">Pick a time below. You'll receive a tailored AI audit report after your call.</p>
+      </div>
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/northstone_ventures/ceo?hide_event_type_details=1&background_color=07101f&text_color=f5f6fa&primary_color=c9a84c"
+        style="min-width:320px;height:700px;">
+      </div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
 
     <p class="form-privacy">
@@ -783,6 +896,92 @@
 
 <!-- ══ Tally embed: enables dynamic iframe height ══ -->
 <script async src="https://tally.so/widgets/embed.js"></script>
+
+<!-- ══ Tally → Calendly reveal on form submission ══ -->
+<script>
+  (function() {
+    var revealed = false;
+
+    function revealCalendly() {
+      if (revealed) return;
+      revealed = true;
+
+      var tallyEl = document.getElementById("tally-container");
+      var calEl   = document.getElementById("calendly-container");
+      if (!tallyEl || !calEl) return;
+
+      tallyEl.style.transition = "opacity 0.3s ease";
+      tallyEl.style.opacity = "0";
+      setTimeout(function() {
+        tallyEl.style.display = "none";
+        calEl.style.display = "block";
+        var top = calEl.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: top, behavior: "smooth" });
+        if (typeof Calendly !== "undefined" && Calendly.initInlineWidgets) {
+          Calendly.initInlineWidgets();
+        }
+      }, 300);
+    }
+
+    // Listen for ALL Tally message formats they have used
+    window.addEventListener("message", function(e) {
+      if (!e.data) return;
+
+      var data = e.data;
+
+      // Format 1: object with event property
+      if (typeof data === "object" && data.event === "Tally.FormSubmitted") {
+        revealCalendly();
+        return;
+      }
+
+      // Format 2: object with isTally flag
+      if (typeof data === "object" && data.isTally === true && data.event === "Tally.FormSubmitted") {
+        revealCalendly();
+        return;
+      }
+
+      // Format 3: string-encoded JSON
+      if (typeof data === "string") {
+        try {
+          var parsed = JSON.parse(data);
+          if (parsed && parsed.event === "Tally.FormSubmitted") {
+            revealCalendly();
+            return;
+          }
+        } catch (err) { /* not JSON, ignore */ }
+      }
+
+      // Format 4: any message containing "Tally.FormSubmitted" string
+      if (typeof data === "string" && data.indexOf("Tally.FormSubmitted") > -1) {
+        revealCalendly();
+        return;
+      }
+    });
+
+    // Fallback: poll the Tally iframe to detect when its content changes to thank-you screen
+    // (Tally's thank-you screen has different page height than form)
+    var tallyIframe = document.querySelector("iframe.tally-iframe");
+    if (tallyIframe) {
+      var lastHeight = 0;
+      var stableCount = 0;
+      var pollInterval = setInterval(function() {
+        try {
+          var currentHeight = tallyIframe.offsetHeight;
+          // If the iframe height shrinks dramatically (form → thank you screen), trigger reveal
+          if (lastHeight > 0 && currentHeight < lastHeight * 0.6 && currentHeight > 0) {
+            revealCalendly();
+            clearInterval(pollInterval);
+          }
+          lastHeight = currentHeight;
+        } catch (err) {}
+      }, 500);
+
+      // Stop polling after 10 minutes
+      setTimeout(function() { clearInterval(pollInterval); }, 600000);
+    }
+  })();
+</script>
 
 </body>
 </html>
